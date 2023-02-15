@@ -7,7 +7,7 @@ void detab(char s[])
 	
 }
 
-int get_line(char s[])
+int getLine(char s[])
 {
 	int i, c;
 
@@ -30,7 +30,7 @@ int main()
 	int c;
 	char s[MAXLEN];
 
-	while ((c = get_line(s)) > 0)
+	while ((c = getLine(s)) > 0)
 	{
 		detab(s);
 		printf("%s", s);
