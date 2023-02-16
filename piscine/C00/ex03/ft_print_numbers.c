@@ -6,7 +6,7 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:23:23 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/15 18:02:55 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:27:17 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -21,12 +21,12 @@ void	print_int(int i)
 
 void	ft_print_numbers(void)
 {
-	int	i;
+	char	i;
 
-	i = 0;
-	while (i <= 9)
+	i = '0';
+	while (i <= '9')
 	{
-		print_int(i);
+		write(1, &i, 1);
 		i++;
 	}
 }
