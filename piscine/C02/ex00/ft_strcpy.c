@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 12:51:36 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/16 16:16:22 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/16 09:30:29 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/16 12:25:31 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-#include <math.h>
-#include <stdlib.h>
 
-void	ft_putnbr(int nb)
+void	ft_strcpy(char *dest, char *src)
 {
-	int		i;
-	char	c[10];
+	int i;
 
 	i = 0;
-	if (nb == 0)
-		write(1, "0", 1);
-	if (nb < 0)
+	while ()
 	{
-		nb = -nb;
-		write(1, "-", 1);
-	}
-	while (nb)
-	{
-		c[i] = (nb % 10) + 48;
-		nb /= 10;
-		i++;
-	}
-	while (i)
-	{
-		write(1, &c[i--], 1);
+
 	}
 }
