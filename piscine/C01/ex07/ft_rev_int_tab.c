@@ -3,25 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gde-vito <gde-vito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 21:20:02 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/15 22:46:57 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:14:38 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int temp = *a;
+	int	temp;
+
+	temp = *a;
 	*a = *b;
 	*b = temp;
 }
 
 void	ft_rev_int_tab(int *tab, int size)
 {
-	int i = 0;
-	int j = size - 1;
+	int	i;
+	int	j;
 
+	i = 0;
+	j = size - 1;
 	while (i < j)
 	{
 		ft_swap(&tab[i], &tab[j]);
