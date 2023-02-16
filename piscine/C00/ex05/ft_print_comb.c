@@ -6,7 +6,7 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 18:54:57 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/16 15:51:31 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:00:46 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -21,8 +21,11 @@ void	ft_print(int a, int b, int c)
 	ft_putchar(a + 48);
 	ft_putchar(b + 48);
 	ft_putchar(c + 48);
-	ft_putchar(',');
-	ft_putchar(' ');
+	if (a != 7 || b != 8 || c != 9)
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
 }
 
 void	ft_print_comb(void)
