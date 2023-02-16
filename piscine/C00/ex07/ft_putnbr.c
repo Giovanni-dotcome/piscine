@@ -6,12 +6,10 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:51:36 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/16 16:16:22 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:57:50 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
-#include <math.h>
-#include <stdlib.h>
 
 void	ft_putnbr(int nb)
 {
