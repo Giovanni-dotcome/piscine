@@ -6,7 +6,7 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 18:11:08 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/15 18:11:25 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:55:10 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 
 void	ft_is_negative(int n)
 {
-	char	n;
-	char	p;
+	char	sign;
 
-	n = 'N';
-	p = 'P';
 	if (n < 0)
-	{
-		write(1, &n, 1);
-	}
+		sign = 'N';
 	else
-	{
-		write(1, &p, 1);
-	}
+		sign = 'P';
+	write(1, &sign, 1);
 }
