@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 09:30:29 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/17 08:56:34 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/17 08:45:13 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/17 09:43:43 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_strcpy(char *dest, char *src)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (i <= n - 1)
 	{
 		dest[i] = src[i];
 		i++;
@@ -24,6 +24,6 @@ void	*ft_strcpy(char *dest, char *src)
 	{
 		dest[i] = '\0';
 		i++;
-	}
+	}	
 	return (dest);
 }

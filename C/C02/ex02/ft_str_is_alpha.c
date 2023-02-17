@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 09:30:29 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/17 08:56:34 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/17 09:44:20 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/17 10:26:48 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+int	is_alpha(char c)
+{
+	return (((c <= 'z') && (c >= 'a')) || ((c <= 'Z') && (c >= 'A')));
+}
 
-void	*ft_strcpy(char *dest, char *src)
+int	ft_str_is_alpha(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (!is_alpha(str[i]))
+			return (0);
 		i++;
 	}
-	while (dest[i] != '\0')
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (1);
 }

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 09:30:29 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/17 08:56:34 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/17 12:04:25 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/17 12:22:58 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_strcpy(char *dest, char *src)
+int	is_lowercase(char c)
+{
+	return ((c <= 'z') && (c >= 'a'));
+}
+
+char	*ft_strupcase(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i])
 	{
-		dest[i] = src[i];
+		if (is_lowercase(str[i]))
+			str[i] = str[i] - 32;
 		i++;
 	}
-	while (dest[i] != '\0')
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (str);
 }

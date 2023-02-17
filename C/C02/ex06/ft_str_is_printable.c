@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 09:30:29 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/17 08:56:34 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/17 11:31:27 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/17 11:36:42 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+int	is_printable(char c)
+{
+	return ((c >= 32) && (c <= 127));
+}
 
-void	*ft_strcpy(char *dest, char *src)
+int	ft_str_is_printable(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i])
 	{
-		dest[i] = src[i];
+		if (!is_printable(str[i]))
+			return (0);
 		i++;
 	}
-	while (dest[i] != '\0')
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (1);
 }

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 09:30:29 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/17 08:56:34 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/17 10:29:24 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/17 10:35:05 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_strcpy(char *dest, char *src)
+int is_numeric(char c)
+{
+	return ((c >= '0') && (c <= '9'));
+}
+
+int ft_str_is_numeric(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (!is_numeric(str[i]))
+			return (0);
 		i++;
 	}
-	while (dest[i] != '\0')
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+
+	return (1);
 }
