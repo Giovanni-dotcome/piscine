@@ -1,17 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 19:34:16 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/18 15:37:15 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/18 15:39:19 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/18 16:30:43 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_putchar(char *c)
+int	is_numeric(char c)
 {
-	write(1, c, 1);
+	return ((c >= '0') && (c <= '9'));
+}
+
+int	ft_atoi(char *str)
+{
+	int i;
+	int e;
+	int r;
+
+	e = r = i = 0;
+	while (is_numeric(str[e]))
+		e++;
+
+	while(i < e)
+	{
+		r *= 10;
+		r += str[i] - 48;
+		i++;	
+	}
+	return (r);
 }
