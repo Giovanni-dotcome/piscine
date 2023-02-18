@@ -3,13 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gde-vito <gde-vito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:20:23 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/18 16:30:15 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:27:53 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_putchar.c"
+void	ft_putchar(char *c);
+
+void	ft_putchars(char *c, int n);
+
+int	is_numeric(char c)
+{
+	return ((c >= '0') && (c <= '9'));
+}
+
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	e;
+	int	r;
+
+	e = 0;
+	r = 0;
+	i = 0;
+	while (is_numeric(str[e]))
+		e++;
+	while (i < e)
+	{
+		r *= 10;
+		r += str[i] - 48;
+		i++;
+	}
+	return (r);
+}
 
 void	print_external_row(char *a, int x)
 {
@@ -17,7 +44,7 @@ void	print_external_row(char *a, int x)
 
 	i = 0;
 	ft_putchar(a);
-	while (i < x-2)
+	while (i < x - 2)
 	{
 		ft_putchar("B");
 		i++;
@@ -33,7 +60,7 @@ void	print_internal_row(int x)
 
 	i = 0;
 	ft_putchar("B");
-	while (i < x-2)
+	while (i < x - 2)
 	{
 		ft_putchar(" ");
 		i++;
@@ -45,10 +72,13 @@ void	print_internal_row(int x)
 
 void	rush(int x, int y)
 {
-	if ((x <= 0) || (y <= 0));
-		return (-1);
 	int	i;
 
+	if ((x <= 0) || (y <= 0))
+	{
+		ft_putchars("inserire un intero positivo.\n", 29);
+		return ;
+	}
 	i = 0;
 	print_external_row("A", x);
 	while (i < y - 2)

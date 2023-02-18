@@ -6,7 +6,7 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:34:16 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/18 15:37:15 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:22:35 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -14,4 +14,9 @@
 void	ft_putchar(char *c)
 {
 	write(1, c, 1);
+}
+
+void	ft_putchars(char *c, int n)
+{
+	write(1, c, n);
 }

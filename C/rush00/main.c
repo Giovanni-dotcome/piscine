@@ -6,19 +6,25 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:19:15 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/18 16:32:16 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:24:07 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "rush02.c"
-#include "ft_atoi.c"
+void	rush(int x, int y);
+
+int		ft_atoi(char *ch);
 
 int	main(int argc, char *argv[])
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
-	x = ft_atoi(argv[1]);
-	y = ft_atoi(argv[2]);
-	rush(x, y);
-	return (0);
+	if (argc > 2)
+	{
+		x = ft_atoi(argv[1]);
+		y = ft_atoi(argv[2]);
+		rush(x, y);
+		return (0);
+	}
+	else
+		return (-1);
 }
