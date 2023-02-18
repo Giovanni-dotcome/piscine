@@ -6,7 +6,7 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 09:32:34 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/18 13:14:07 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/18 14:34:07 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -35,12 +35,13 @@ char	*ft_strcapitalize(char *str)
 	start_word = 1;
 	while (str[i])
 	{
-		if (start_word && is_lower(str[i]))
+		if (start_word)
 		{
-			str[i] = str[i] - 32;
 			start_word = 0;
+			if (is_lower(str[i]))
+				str[i] = str[i] - 32;
 		}
-		else if (!start_word && is_upper(str[i]))
+		else if (is_upper(str[i]))
 			str[i] = str[i] + 32;
 		if (!is_alpha(str[i]))
 			start_word = 1;
