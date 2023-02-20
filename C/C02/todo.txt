@@ -1,0 +1,4 @@
+ex12: void cast??
+ex10: better way?
+ex09: check for number as first char of word.
+

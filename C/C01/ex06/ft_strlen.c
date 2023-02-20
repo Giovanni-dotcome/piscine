@@ -6,7 +6,7 @@
 /*   By: gde-vito <gde-vito@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 21:05:12 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/16 18:11:13 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:49:07 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 		i++;
 	return (i);
 }
