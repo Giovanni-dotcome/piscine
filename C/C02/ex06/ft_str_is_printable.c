@@ -6,12 +6,12 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:31:27 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/17 11:36:42 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:28:42 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	is_printable(char c)
 {
-	return ((c >= 32) && (c <= 127));
+	return ((c >= 32) && (c <= 126));
 }
 
 int	ft_str_is_printable(char *str)
