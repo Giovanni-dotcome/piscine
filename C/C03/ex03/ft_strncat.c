@@ -1,31 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gde-vito <gde-vito@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/15 21:20:02 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/20 17:10:59 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/20 17:32:12 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/20 17:35:58 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	temp;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-void	ft_rev_int_tab(int *tab, int size)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = size - 1;
-	while (i < j)
-		ft_swap(&tab[i++], &tab[j--]);
 }
