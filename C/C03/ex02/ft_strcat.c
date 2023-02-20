@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 17:32:12 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/20 18:03:44 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/20 16:53:14 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/20 17:31:08 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strcat(char *dest, char *src)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
 	while (dest[i])
 		i++;
-	while (src[j] && j < nb)
+	while (src[j])
 		dest[i++] = src[j++];
 	return (dest);
 }

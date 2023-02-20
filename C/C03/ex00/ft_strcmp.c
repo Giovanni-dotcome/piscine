@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 17:32:12 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/20 18:03:44 by gde-vito         ###   ########.fr       */
+/*   Created: 2023/02/20 15:13:07 by gde-vito          #+#    #+#             */
+/*   Updated: 2023/02/20 16:14:13 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	r;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j] && j < nb)
-		dest[i++] = src[j++];
-	return (dest);
+	r = 0;
+	while (s1[i] && s2[j] && !r)
+		r = s1[i++] - s2[j++];
+	return (r);
 }
