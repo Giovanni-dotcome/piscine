@@ -6,13 +6,13 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 08:45:13 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/17 09:43:43 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/21 22:06:37 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i <= n - 1)
