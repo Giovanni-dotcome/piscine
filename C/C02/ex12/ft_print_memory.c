@@ -6,10 +6,16 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:57:56 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/20 13:18:12 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:03:23 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
+#include <stdio.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int	not_printable(char c)
 {
@@ -19,60 +25,63 @@ int	not_printable(char c)
 char	int_to_hexa(int c)
 {
 	if (c <= 9)
-		return c + '0';	
-	return c + 'a';
+		return (c + '0');
+	return (c - 10 + 'a');
 }
 
-void	ft_print_hexa(int c)
+void	ft_print_mem(long mem)
 {
-	char	*r;
+	char	r[17];
 	int		i;
+	int		j;
 
-	while(i < 3)
+	i = 0;
+	while (i < 17)
+		r[i++] = 0;
+	i = 0;
+	while (mem)
 	{
-		r[i] = 0;
-		i++;
+		r[i++] = int_to_hexa(mem % 16);
+		mem /= 16;
 	}
-
-	while (c)
+	j = i;
+	while (j < 16)
 	{
-		r[i] = int_to_hexa(c%16);
-		c /= 16;	
+		ft_putchar('0');
+		j++;
 	}
-
+	i--;
 	while (i >= 0)
-	{
-		write(1, &r[i], 1);
-		i--;
-	}
+		ft_putchar(r[i--]);
+	ft_putchar(':');
+	ft_putchar(' ');
 }
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
-	int	i;
+	long			mem_long;
+	long			*addr_long;
+	char			*addr_char;
+	unsigned int	i;
 
-	i = (int) addr;
-
-	write(1, &i, 1);
-	write(1, " ", 1);
-
+	addr_long = (long *)addr;
+	addr_char = (char *)addr;
+	mem_long = (long)addr_long;
+	ft_print_mem(mem_long);
 	i = 0;
 	while (i < size)
 	{
-		ft_print_hexa(((int)addr[i]));		
-		write(1, " ", 1);
-		i++;
+		ft_putchar((mem_char[i] / 16) + '0');
+		ft_putchar(int_to_hexa(mem_char[i] % 16));
+		ft_putchar(' ');
 	}
-
 	i = 0;
 	while (i < size)
 	{
-		if (not_printable(addr[i]))
-			write(1, ".", 1);
+		if (addr[i++] < 32)
+			ft_putchar('.');
 		else
-			write(1, &addr[i], 1);
-		i++;
+			ft_putchar(addr[i++]);
 	}
-	
-	return addr;
+	return (addr);
 }

@@ -6,11 +6,10 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:00:04 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/20 14:08:49 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:29:19 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -38,7 +37,7 @@ void	ft_putstr_non_printable(char *str)
 	{
 		if (is_not_printable(str[i]))
 		{
-			ft_putchar(92);
+			ft_putchar('\\');
 			ft_putchar('0' + (str[i] / 16));
 			ft_putchar(to_hexa(str[i] % 16));
 		}
