@@ -6,7 +6,7 @@
 /*   By: gde-vito <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 10:57:56 by gde-vito          #+#    #+#             */
-/*   Updated: 2023/02/21 20:43:40 by gde-vito         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:47:29 by gde-vito         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -60,28 +60,28 @@ void	ft_print_mem(long mem)
 void	*ft_print_memory(void *addr, unsigned int size)
 {
 	long			mem_long;
-	long			*addr_long;
 	char			*addr_char;
 	unsigned int	i;
 
-	addr_long = (long *)addr;
 	addr_char = (char *)addr;
-	mem_long = (long)addr_long;
+	mem_long = (long)(long *)addr;
 	ft_print_mem(mem_long);
 	i = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
-		ft_putchar((mem_char[i] / 16) + '0');
-		ft_putchar(int_to_hexa(mem_char[i] % 16));
+		ft_putchar((addr_char[i] / 16) + '0');
+		ft_putchar(int_to_hexa(addr_char[i] % 16));
 		ft_putchar(' ');
+		i++;
 	}
 	i = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
-		if (addr[i++] < 32)
+		if (addr_char[i] < 32)
 			ft_putchar('.');
 		else
-			ft_putchar(addr[i++]);
+			ft_putchar(addr_char[i]);
+		i++;
 	}
 	return (addr);
 }
