@@ -1,0 +1,4 @@
+ex01: Segmentation fault
+ex10: Segmentation fault
+ex11: KO
+ex12: Timeout
